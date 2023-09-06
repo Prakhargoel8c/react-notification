@@ -1,0 +1,11 @@
+.notifiacation-container {
+    position: absolute;
+    max-height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 11rem;
+    right: 0;
+    top: 1rem;
+}
