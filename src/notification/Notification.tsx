@@ -15,5 +15,5 @@ export const Notification=({message,type,clearNotification}:NotificationProps)=>
     }),100)
         return ()=>clearInterval(intervalId);
     },[ishovered])
-    return (<div onMouseEnter={()=>setIsHovered(true)} onMouseLeave={()=>setIsHovered(false)}>{message}</div>);
+    return (<div className="notification" onMouseEnter={()=>setIsHovered(true)} onMouseLeave={()=>setIsHovered(false)}>{message}</div>);
 }
