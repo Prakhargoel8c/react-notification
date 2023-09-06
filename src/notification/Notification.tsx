@@ -10,11 +10,10 @@ export const Notification=({message,type,clearNotification}:NotificationProps)=>
     useEffect(()=>{
         if(ishovered) return;
         const intervalId=setInterval(()=>setTimer(timer=>{const newTimer=timer+1;
-        console.log(timer);
         if(newTimer===20) window.requestAnimationFrame(()=>clearNotification());
         return newTimer;
     }),100)
         return ()=>clearInterval(intervalId);
-    },[ishovered,timer])
+    },[ishovered])
     return (<div onMouseEnter={()=>setIsHovered(true)} onMouseLeave={()=>setIsHovered(false)}>{message}</div>);
 }
