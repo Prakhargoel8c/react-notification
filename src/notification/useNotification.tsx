@@ -1,4 +1,5 @@
 import ReactDOM from "react-dom/client";
+import { Notification } from "./Notification";
 export const useNotification = () => {
  const showNotification=(message:string|JSX.Element, type:"info"|"error"|"sucess")=>{
   const notificationContainer=document.getElementsByClassName("notifiacation-container")[0];
@@ -9,7 +10,7 @@ export const useNotification = () => {
     root.unmount();
     notification.remove();
   }
-  root.render(<div>{message}</div>)
+  root.render(<Notification message={message} type={type} clearNotification={clearNotification}/>)
   
   return clearNotification;
  }
