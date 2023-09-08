@@ -1,8 +1,7 @@
 import ReactDOM from "react-dom/client";
 import {ReactNode} from "react"
 import { Notification } from "./Notification";
-export const useNotification = () => {
- const showNotification=(message:ReactNode, type:"info"|"error"|"sucess")=>{
+export const showNotification=(message:ReactNode, type:"info"|"error"|"sucess")=>{
   const notificationContainer=document.getElementsByClassName("notifiacation-container")[0];
   const notification=document.createElement("div")
   notificationContainer.append(notification)
@@ -15,6 +14,5 @@ export const useNotification = () => {
   
   return clearNotification;
  }
-  return ({showNotification})
-}
+
 

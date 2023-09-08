@@ -4,14 +4,86 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
-    width: 11rem;
+    min-width: 11rem;
     right: 0;
     top: 1rem;
 }
-.notification{
-    background: #000;
-    padding: 1rem;
-    padding-bottom: 0rem;
-    color: white;
-}
+.notification-item {
+    border: 1px solid transparent;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    animation: SlideLeft 0.4s;
+    animation-fill-mode: forwards;
+    width: 300px;
+    z-index: 100;
+    background: #fff;
+  }
+  
+  .notification-item.exit {
+    animation: SlideRight 0.4s;
+    animation-fill-mode: forwards;
+  }
+  
+  .notification-item p {
+    margin: 0;
+    padding: 15px;
+  }
+  
+  .notification-item .progress-bar {
+    height: 10px;
+  }
+  
+  .notification-item.success {
+    border-color: #2ecc71;
+  }
+  
+  .notification-item.success .progress-bar {
+    background-color: #2ecc71;
+  }
+  
+  .notification-item.error {
+    border-color: #e74c3c;
+  }
+  
+  .notification-item.error .progress-bar {
+    background-color: #e74c3c;
+  }
+  
+  .notification-item.info {
+    border-color: #3498db;
+  }
+  
+  .notification-item.info .progress-bar {
+    background-color: #3498db;
+  }
+  
+  .notification-item.warning {
+    border-color: #f1c40f;
+  }
+  
+  .notification-item.warning .progress-bar {
+    background-color: #f1c40f;
+  }
+  
+  @keyframes SlideLeft {
+    0% {
+      margin-left: 120%;
+    }
+  
+    100% {
+      margin-left: 0;
+    }
+  }
+  
+  @keyframes SlideRight {
+    0% {
+      margin-left: 0;
+    }
+  
+    100% {
+      margin-left: 120%;
+    }
+  }
+  

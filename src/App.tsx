@@ -1,8 +1,7 @@
-import { NotificationContainer, useNotification } from "./notification";
+import { NotificationContainer, showNotification } from "./notification";
 import "./styles.css";
 
 export default function App() {
-  const {showNotification}=useNotification();
   const handleClick=()=>{
     showNotification("test","info")
   }
